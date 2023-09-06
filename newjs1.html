@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>my new rock</h1>
+    <div style="display: flex;">
+    <div class="coloursquare" id="red" style="height: 100px; width: 100px; background-color: red;" valued="red"></div>
+    <div class="coloursquare" id="yellow" style="height: 100px; width: 100px; background-color: yellow;" valued="yellow" ></div>
+    <div class="coloursquare" id="green" style="height: 100px; width: 100px; background-color: green;" valued="green"></div>
+</div><button id="clear">clear-game</button>
+        <script>
+            let Divred=document.getElementById('red')
+            let Divyellow=document.getElementById('red')
+            let Divgreen=document.getElementById('red')
+           
+            /*const timesclicked ={'red':0,'yellow':0,'green':0}
+            const square=document.querySelectorAll('.coloursquare')
+            square.forEach(ele=>ele.onclick=()=>
+            {
+                timesclicked[ele.getAttribute('valued')]+=1;
+                ele.innerText=timesclicked[ele.getAttribute('valued')];
+            })*/
+            const timclick = {'red':0,'yellow':0,'green':0}
+            const squares=document.querySelectorAll('.coloursquare')
+            squares.forEach(sq=>sq.onclick=()=>{
+                timclick[sq.getAttribute('valued')]+=1
+                sq.innerText=timclick[sq.getAttribute('valued')];
+            })
+           function clear()
+           {
+            timclick.red=0;
+            timclick.yellow=0
+            timclick.green=0
+            squares.forEach(square=>{
+                square.innerText=0
+            })
+           }
+           const clearbutton=document.getElementById('clear')
+           clearbutton.onclick = () => clear()
+          
+
+        </script>
+</body>
+</html>
